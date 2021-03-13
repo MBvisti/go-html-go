@@ -1,4 +1,4 @@
-module go-mbv-go
+module go-html-go
 
 go 1.16
 
