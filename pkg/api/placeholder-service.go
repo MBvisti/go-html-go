@@ -12,6 +12,6 @@ type placeholderService struct {
 	storage PlaceholderRepository
 }
 
-func NewUserService(placeholderRepo PlaceholderRepository) PlaceholderService {
+func NewPlaceholderService(placeholderRepo PlaceholderRepository) PlaceholderService {
 	return &placeholderService{placeholderRepo}
 }

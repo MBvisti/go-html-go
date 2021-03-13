@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"go-mbv-go/pkg/api"
-	"go-mbv-go/pkg/http"
-	"go-mbv-go/pkg/repository"
+	"go-html-go/pkg/api"
+	"go-html-go/pkg/http"
+	"go-html-go/pkg/repository"
 	"os"
 )
 
@@ -30,7 +30,7 @@ func run() error {
 	}
 
 	// TODO: rename this service, only placeholder
-	placeholderService := api.NewUserService(db)
+	placeholderService := api.NewPlaceholderService(db)
 
 	// setup the api
 	api := api.NewApi(placeholderService)
