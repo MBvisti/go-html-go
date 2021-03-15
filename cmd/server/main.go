@@ -4,11 +4,12 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"go-html-go/pkg/api"
 	"go-html-go/pkg/http"
 	"go-html-go/pkg/repository"
 	"os"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
