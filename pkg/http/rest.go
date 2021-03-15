@@ -2,7 +2,7 @@ package http
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-mbv-go/pkg/api"
+	"go-html-go/pkg/api"
 )
 
 type Router interface {
@@ -11,11 +11,11 @@ type Router interface {
 }
 
 type router struct {
-	api.API
+	api.Services
 	routerEngine *gin.Engine
 }
 
-func NewRouter(r *gin.Engine, api api.API) Router {
+func NewRouter(r *gin.Engine, api api.Services) Router {
 	return &router{api, r}
 }
 

@@ -6,7 +6,7 @@ import (
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 	_ "github.com/lib/pq"
-	"go-mbv-go/internal"
+	"go-html-go/internal"
 	"os"
 	"path/filepath"
 )
