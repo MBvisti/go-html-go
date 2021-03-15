@@ -1,12 +1,19 @@
 # Go html Go 
-This is the template I use for kick-starting all my Golang projects.
-
-It is meant to provide some initial structure that is flexible but also lets you get building fast.
+This is a template meant to get you creating websites with Go, fast.
 
 ## Dependencies
-Golang migrate: `brew install golang-migrate`
+- Go 1.16+
+- Golang migrate: `brew install golang-migrate`
+- PostgreSQL: `brew install postgres`
+- Node 12+
+- Yarn
 
-PostgreSQL: `brew install postgres`
+## Getting up and running
+First off, make sure you have all the dependencies installed and given the shell script permission to run (see below for description). Next, run `make setup-dev` to install package.json dependencies and generate tailwind styles.
+
+Next, rename `.example.env` to `.env` and provide the needed environmental variables.
+
+Finally, run `make run` see you application.
 
 ## Makefile commands
 This template uses Makefile commands to run the service, work with migrations and building binaries (coming). You have the following commands available:
@@ -16,6 +23,8 @@ This template uses Makefile commands to run the service, work with migrations an
 - down-x-migrations
 - drop-database
 - create-migration
+- static-dev
+- static-prod  
 - run 
   
 #### Description 
@@ -34,6 +43,10 @@ The template uses `golang-migrate` to handle migrations. This library will gener
 **create-migration**: will generate a pair of `up` and `down` version for your migration. To name it, simply run `make create-migration name=name-of-migration`. If this
 is not applied it will only have a number, i.e. `000001.sql`.
 
+**static-dev**: gives you the whole tailwind library. Should only be used in development (*required yarn to run*)
+
+**static-prod**: purges the css in your project so it only ships what is needed  (*required yarn to run*)
+
 **run**: this will call the `go.sh` file and start the project. The `go.sh` script will `vet` and `fmt` the project as well as sourcing any
 environmental variables you have in `.env`.
 
@@ -48,3 +61,5 @@ To use the make command: `make run` you need to give the `go.sh` permission to r
 
 You also need to create a `.env` file that holds all of your environmental variables. This can be done by changing the name of the `.example.env` file to `.env` and add any variables you need here.
 
+## License
+MIT
