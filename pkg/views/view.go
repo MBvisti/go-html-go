@@ -5,6 +5,6 @@ import (
 )
 
 func Home(w io.Writer) error {
-	home := parse("pages/home.html")
+	home := parse("home.html")
 	return home.Execute(w, nil)
 }
