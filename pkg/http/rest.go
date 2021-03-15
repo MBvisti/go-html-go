@@ -1,8 +1,10 @@
 package http
 
 import (
-	"github.com/gin-gonic/gin"
 	"go-html-go/pkg/api"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Router interface {
@@ -21,6 +23,9 @@ func NewRouter(r *gin.Engine, api api.Services) Router {
 
 func (r *router) Run(addr string) error {
 	routes := r.routes()
+
+	// add static dir
+	routes.StaticFS("/static", http.Dir("./pkg/views/static"))
 
 	return routes.Run(addr)
 }
