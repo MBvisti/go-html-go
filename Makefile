@@ -23,5 +23,11 @@ drop-database:
 create-migration:
 	migrate create -ext sql -dir ${MIGRATION_DIR} -seq "$name"
 
+static-dev:
+	yarn build:dev
+
+static-prod:
+	yarn build:prod
+
 run:
 	./go.sh
