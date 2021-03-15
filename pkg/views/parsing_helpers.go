@@ -7,13 +7,14 @@ import (
 
 // TODO: look more into the performance as I'm not sure about this/
 // it seems cool so I'm trying it out
-
 //go:embed layout/* pages/*
 var htmlTemplates embed.FS
 
+var pagesPath = "pages/"
+
 func parse(page string) *template.Template {
 	return mustWithError(
-		template.New("layout.html").ParseFS(htmlTemplates, "layout/layout.html", page))
+		template.New("layout.html").ParseFS(htmlTemplates, "layout/layout.html", pagesPath+page))
 }
 
 //MustWithError
